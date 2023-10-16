@@ -12,13 +12,17 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule} from "@angular/common/http";
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { SecretsComponent } from './secrets/secrets.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    SecretsComponent
   ],
   imports: [
     BrowserModule,
