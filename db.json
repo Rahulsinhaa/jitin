@@ -1,58 +1,26 @@
 {
   "user": [
     {
-      "id": "jitin",
-      "name": "jitin saxena ",
-      "password": "$2a$10$EnJZXwI61S/t7ZLMnKixE.tXBf1XlVlilJe9e0AsMagmnGGfHScgi",
-      "email": "jitin.saxena@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
-    },
-    {
-      "id": "sinha",
-      "name": "rahul sinha",
-      "password": "$2a$10$wTaHU.2qxookDB/PDtP.pOrN5QzpNu79osk4yfVAIa.WXPu6qj.ZO",
-      "email": "rahul.sinha@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
-    },
-    {
-      "id": "rahul",
-      "name": "rahul sinha ",
-      "password": "$2a$10$B0KC6G14yjrI0eEs/sJS6O8oVPSlQ3LA4QVELDAPGjn/pd9T/fH/K",
-      "email": "rahulsinhacu@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
-    },
-    {
-      "id": "jasee",
-      "name": "rhaul",
-      "password": "$2a$10$Og0JnyPBng4WYXT3a2btMeyDEuZdRjYXxLW4g/ShIKTPURnEDaN/G",
-      "email": "Rahulsinha@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
-    },
-    {
       "id": "test12",
       "name": "test user",
       "password": "$2a$10$CoSKJ62GJBetsXecRqBM.O1cU7dzmN5bVzPwJbwlCP.xgRpe/ASFO",
       "email": "test@gmail.com",
       "gender": "male",
       "role": "",
-      "isactive": false
+      "isactive": false,
+      "secrets": []
+    }
+  ],
+
+  "mySecrets": [
+    {
+      "id": "test12",
+      "secret": ["laptop mera hai", "mera hai to mera hai"]
     },
     {
-      "id": "julie",
-      "name": "julie",
-      "password": "$2a$10$Dh6yaUzg7YmFQi6oONUCZeJUAcUl7LmQCSRpX/mG7GHW6u6kPDjna",
-      "email": "rahulsinhacu@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
+      "id": "test123",
+      "secret": ["laptop mera ni hai", "mera ni hai to mera ni hai"]
     }
   ]
+
 }

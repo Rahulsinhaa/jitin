@@ -17,6 +17,7 @@ export class AuthService {
 
 
   apiurl='http://localhost:3000/user';
+  secretUrl = 'http://localhost:3000/mySecrets'
 
 
 
@@ -33,6 +34,10 @@ export class AuthService {
 
   GetUserbyCode(id:any){
     return this.http.get(this.apiurl+'/'+id);
+  }
+
+  getSecretsByCode(id:any){
+    return this.http.get(this.secretUrl+'/'+id);
   }
 
 }
