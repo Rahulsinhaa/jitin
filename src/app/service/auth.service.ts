@@ -13,4 +13,9 @@ export class AuthService {
   RegisterUser(inputdata:any){
     return this.http.post(this.apiurl,inputdata)
   }
+
+  GetUserbyCode(id:any){
+    return this.http.get(this.apiurl+'/'+id);
+  }
+
 }

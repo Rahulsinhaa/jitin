@@ -17,6 +17,15 @@
       "gender": "male",
       "role": "",
       "isactive": false
+    },
+    {
+      "id": "sinha",
+      "name": "hey there",
+      "password": "$2a$10$pMYU/aWbBmMAsZfPDpQUGOQcNoGJNP6eTZPpujDQPEUZcTxyvPuBa",
+      "email": "rahulsinha@gamial.com",
+      "gender": "male",
+      "role": "",
+      "isactive": false
     }
   ]
 }
