@@ -25,16 +25,7 @@ export class RegisterComponent {
     role: this.builder.control(''),
     isactive: this.builder.control(false)
   });
-  // proceedregister() {
-  //   if (this.registerform.valid) {
-  //     this.service.RegisterUser(this.registerform.value).subscribe(result => {
-  //       this.toastr.success('Please contact admin for enable access.','Registered successfully')
-  //       this.router.navigate(['login'])
-  //     });
-  //   } else {
-  //     this.toastr.warning('Please enter valid data.')
-  //   }
-  // }
+
 
   async hashPassword(plainTextPassword: string): Promise<string> {
     const saltRounds = 10; // You can adjust this value as needed
@@ -67,6 +58,11 @@ export class RegisterComponent {
       // Send the form data, including the hashed password, to the RegisterUser service
       this.service.RegisterUser(this.registerform.value).subscribe(result => {
         this.toastr.success('Please contact admin for enable access.', 'Registered successfully');
+        const dataToAdd = {
+          id: this.registerform.value.id,
+          secret: []
+        };
+        this.service.addsecret(dataToAdd).subscribe();
         this.router.navigate(['login']);
       });
     } else {

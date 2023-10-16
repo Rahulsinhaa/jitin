@@ -36,8 +36,17 @@ export class AuthService {
     return this.http.get(this.apiurl+'/'+id);
   }
 
-  getSecretsByCode(id:any){
-    return this.http.get(this.secretUrl+'/'+id);
+    getSecretsByCode(id:any){
+      return this.http.get(this.secretUrl+'/'+id);
+    }
+
+  addsecret(secret:any){
+    return this.http.post(this.secretUrl,secret)
   }
 
+  updateuser(id:any,inputdata:any){
+    console.log('inside api call',inputdata)
+    console.log(id)
+    return this.http.put(this.secretUrl+'/'+id,inputdata);
+  }
 }
