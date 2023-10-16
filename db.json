@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": "rhqual",
+      "name": "rhaulsinha kumar",
+      "password": "Rahul@1234",
+      "email": "rhaulsinha@gmailc.om",
+      "gender": "male",
+      "role": "",
+      "isactive": false
+    },
+    {
+      "id": "jitin",
+      "name": "jitin saxena",
+      "password": "$2a$10$YRm9pNJtznDkmKY5lqeZ4.096U0nHTPfP32E5vXvCEqYQBFQx1i52",
+      "email": "jitin.saxena@gmail.com",
+      "gender": "male",
+      "role": "",
+      "isactive": false
+    }
+  ]
+}
