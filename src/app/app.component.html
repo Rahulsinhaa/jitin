@@ -5,7 +5,9 @@
 
   <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" >
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">Secret.io</a>
+<!--      <a class="navbar-brand" routerLink="secrets">Secret.io</a>-->
+      <a class="navbar-brand" (click)="secretValication()">Secret.io</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,7 +24,7 @@
       <div>
         <ul>
           <li class="nav-item mt-3">
-            <a class="nav-link " routerLink="/" (click)="logOut">Logout</a>
+            <button (click)="logOut()">Logout</button>
           </li>
         </ul>
       </div>

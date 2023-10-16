@@ -44,6 +44,15 @@
       "gender": "male",
       "role": "",
       "isactive": false
+    },
+    {
+      "id": "julie",
+      "name": "julie",
+      "password": "$2a$10$Dh6yaUzg7YmFQi6oONUCZeJUAcUl7LmQCSRpX/mG7GHW6u6kPDjna",
+      "email": "rahulsinhacu@gmail.com",
+      "gender": "male",
+      "role": "",
+      "isactive": false
     }
   ]
 }

@@ -10,6 +10,7 @@ export class AuthService {
   constructor(private http:HttpClient, private router: Router) {}
 
   isloggedin(){
+
     return sessionStorage.getItem('username')!=null;
   }
 
@@ -20,7 +21,9 @@ export class AuthService {
 
 
   logOut(){
+    console.log("before log out",sessionStorage.getItem("username"))
     sessionStorage.clear();
+    console.log("after log out",sessionStorage.getItem("username"))
     this.router.navigate([''])
   }
 

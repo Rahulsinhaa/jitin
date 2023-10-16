@@ -39,6 +39,7 @@ export class LoginComponent {
           // Use bcrypt.compareSync for synchronous comparison
           if (passwordMatch) {
             sessionStorage.setItem('username',this.result.id);
+            console.log('Sessionid:',sessionStorage.getItem("username"));
             this.router.navigate(['secrets']);
             console.log('We are logged in to the safe area');
           } else {
