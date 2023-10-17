@@ -1,13 +1,29 @@
+// forget-password.component.ts
 import { Component } from '@angular/core';
-import {AuthService} from "../service/auth.service";
-import {Router} from "@angular/router";
+import { AuthService } from "../service/auth.service";
+import { Router } from "@angular/router";
 
+/**
+ * ForgetPasswordComponent handles the functionality for initiating a password reset.
+ */
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.component.html',
   styleUrls: ['./forget-password.component.css']
 })
 export class ForgetPasswordComponent {
+  /**
+   * The email input for initiating a password reset.
+   */
+  email: string = '';
+
+  /**
+   * Constructor for ForgetPasswordComponent.
+   * @param authService - The AuthService used for initiating password reset requests.
+   * @param router - The Angular Router service for navigation.
+   */
+  constructor(private authService: AuthService, private router: Router) {}
+
   // email: string = '';
   // successMessage: string = '';
   // errorMessage: string = '';
@@ -58,21 +74,19 @@ export class ForgetPasswordComponent {
   //   );
   // }
 
-  email: string = '';
-
-  constructor(private authService: AuthService, private router:Router) {}
-
+  /**
+   * Initiates a password reset request using the provided email.
+   * Navigates to the 'resetPassword' route on successful request.
+   */
   requestReset() {
     this.authService.requestPasswordReset(this.email).subscribe(
       (response) => {
         console.log('Reset link sent successfully:', response);
-        this.router.navigate(['resetPassword'])
-
+        this.router.navigate(['resetPassword']);
       },
       (error) => {
         console.error('Error sending reset link:', error);
       }
     );
   }
-
 }

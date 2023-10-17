@@ -1,10 +1,14 @@
+// register.component.ts
 import { Component } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
-import {AuthService} from "../service/auth.service";
-import {Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
-import * as bcrypt from 'bcryptjs'
+import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { AuthService } from "../service/auth.service";
+import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
+import * as bcrypt from 'bcryptjs';
 
+/**
+ * RegisterComponent handles the functionality for user registration.
+ */
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,11 +16,21 @@ import * as bcrypt from 'bcryptjs'
 })
 export class RegisterComponent {
 
+  /**
+   * Constructor for RegisterComponent.
+   * @param builder - The Angular FormBuilder for creating form controls.
+   * @param service - The AuthService for handling authentication-related tasks.
+   * @param router - The Angular Router service for navigation.
+   * @param toastr - The ToastrService for displaying toastr notifications.
+   */
   constructor(private builder: FormBuilder, private service: AuthService, private router: Router,
               private toastr: ToastrService) {
   }
 
-  registerform = this.builder.group({
+  /**
+   * FormGroup representing the registration form with various controls.
+   */
+  registerform: FormGroup = this.builder.group({
     id: this.builder.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
     name: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.compose([Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
@@ -25,22 +39,22 @@ export class RegisterComponent {
     role: this.builder.control(''),
     isactive: this.builder.control(false)
   });
-  // proceedregister() {
-  //   if (this.registerform.valid) {
-  //     this.service.RegisterUser(this.registerform.value).subscribe(result => {
-  //       this.toastr.success('Please contact admin for enable access.','Registered successfully')
-  //       this.router.navigate(['login'])
-  //     });
-  //   } else {
-  //     this.toastr.warning('Please enter valid data.')
-  //   }
-  // }
 
+  /**
+   * Hashes a plain text password using bcrypt.
+   * @param plainTextPassword - The plain text password to be hashed.
+   * @returns A Promise that resolves to the hashed password.
+   */
   async hashPassword(plainTextPassword: string): Promise<string> {
     const saltRounds = 10; // You can adjust this value as needed
     return await bcrypt.hash(plainTextPassword, saltRounds);
   }
 
+  /**
+   * Async function to proceed with the registration process.
+   * If form is valid, hashes the password and sends the form data to RegisterUser service.
+   * Navigates to 'login' route on successful registration.
+   */
   async proceedregister() {
     if (this.registerform?.valid) { // Use optional chaining here
 
@@ -73,5 +87,4 @@ export class RegisterComponent {
       this.toastr.warning('Please enter valid data.');
     }
   }
-
 }
