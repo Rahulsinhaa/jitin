@@ -7,20 +7,46 @@
       "email": "test@gmail.com",
       "gender": "male",
       "role": "",
-      "isactive": false,
-      "secrets": []
+      "isactive": false
+    },
+    {
+      "id": "jitin3009",
+      "name": "Jitin Saxena",
+      "password": "$2a$10$Vb44Itu62owPbqefMMrMZuy4cSiCFjodbWlliQ7DGW8jZaAqfVx2y",
+      "email": "jitin.saxena09@gmail.com",
+      "gender": "male",
+      "role": "",
+      "isactive": false
     }
   ],
-
+  "resetTokens": [
+    {
+      "email": "jitin.saxena09@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "jitin.saxena09@gmail.com",
+      "id": 2
+    },
+    {
+      "email": "jitin.saxena09@gmail.com",
+      "id": 3
+    }
+  ],
   "mySecrets": [
     {
       "id": "test12",
-      "secret": ["laptop mera hai", "mera hai to mera hai"]
+      "secret": [
+        "laptop mera hai",
+        "mera hai to mera hai"
+      ]
     },
     {
       "id": "test123",
-      "secret": ["laptop mera ni hai", "mera ni hai to mera ni hai"]
+      "secret": [
+        "laptop mera ni hai",
+        "mera ni hai to mera ni hai"
+      ]
     }
   ]
-
 }
